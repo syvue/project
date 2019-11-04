@@ -1,20 +1,16 @@
 <template>
     <div>
-        <h1>Vue-router</h1>
-        <ul>
-            <li>项目</li>
-            <li>语言</li>
-            <li>语法</li>
-            <li>。。。。</li>
-        </ul>
-
-        <p>index.html==>main.js==>App.vue==>router-view==>Home.vue,about.vue</p>
+       <home-header></home-header> 
     </div>
 </template>
 
 <script>
+import HomeHeader from './components/Header'
 export default {
-    name: 'Home'
+    name: 'Home',
+    components:{
+        HomeHeader
+    }
 }
 </script>
 
