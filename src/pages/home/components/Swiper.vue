@@ -47,6 +47,5 @@ export default {
     padding-bottom 26.66%
     background #ccc
     .swiper-img
-      width 100%
-    
+      width 100% 
 </style>
