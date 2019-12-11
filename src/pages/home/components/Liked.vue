@@ -5,7 +5,7 @@
             <span class="title-content">猜你喜欢</span>
         </div>
          <ul>
-             <li class="item" v-for='item of likeList' :key='item.id'>
+             <li class="item" v-for='item of list' :key='item.id'>
                  <img class="item-img" :src="item.imgUrl" >
              <div class="item-info">
                  <p class="item-title">{{item.title}}</p>
@@ -24,35 +24,10 @@
 <script>
 export default {
     name: 'HomeLiked',
-    data () {
-        return {
-            likeList:[{
-                id: '001',
-                imgUrl:'http://img1.qunarzz.com/sight/p0/201402/25/7c223b024b7ba7db02088e3f62c5e07c.jpg_200x200_dcbf7130.jpg',
-                title:'崀山',
-                star:'&#xe6b0;&#xe6b0;&#xe6b0;&#xe6b0;&#xe6b0;',
-                comment:'321评论',
-                price:'￥68起',
-                desc:'帅的人都去过了😎，你还等什么~'
-            },{
-                id: '002',
-                imgUrl:'http://img1.qunarzz.com/sight/p0/201402/25/7c223b024b7ba7db02088e3f62c5e07c.jpg_200x200_dcbf7130.jpg',
-                title:'崀山',
-                star:'&#xe6b0;&#xe6b0;&#xe6b0;',
-                comment:'321评论',
-                price:'￥68起',
-                desc:'帅的人都去过了😎，你还等什么~'
-            },{
-                id: '003',
-                imgUrl:'http://img1.qunarzz.com/sight/p0/201402/25/7c223b024b7ba7db02088e3f62c5e07c.jpg_200x200_dcbf7130.jpg',
-                title:'崀山',
-                star:'&#xe6b0;&#xe6b0;&#xe6b0;',
-                comment:'321评论',
-                price:'￥68起',
-                desc:'帅的人都去过了😎，你还等什么~'
-            }]
-        }
+    props:{
+        list: Array
     }
+  
 }
 </script>
 

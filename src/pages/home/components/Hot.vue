@@ -1,61 +1,41 @@
 <template>
-    <div>
-        <div class="title">
-            <img src="http://img1.qunarzz.com/piao/fusion/1711/16/bfbb9874e8f11402.png" >
-            <span>本周热门榜单</span>
+  <div>
+      <div class="title">
+        <img class="title-img" src="http://img1.qunarzz.com/piao/fusion/1711/16/bfbb9874e8f11402.png">
+        <span class='title-left'>本周热门榜单</span>
+        <span class="title-right">全部榜单 ></span>
         </div>
-        <div class="wrapper">
-            <swiper :options='swiperOption'>
-                <swiper-slide v-for='item of hotList' :key='item.id'>
-                    <div class="hot-img">
-                        <img :src="item.imgUrl" >
-                    </div>
+      <div class="wrapper">
+          <swiper :options='swiperOption'>
+            <!-- hotList修改为list -->
+              <swiper-slide v-for='item of list' :key='item.id'>
+                  <div class="hot-img">
+                    <img class="hot-img-content" :src="item.imgUrl" />
+                  </div>  
                     <p class="desc">{{item.desc}}</p>
-                    <p class="price">{{item.price}}</p>
-                </swiper-slide>
-     
-            </swiper>
-        </div>
-    </div>
+                    <p class="price">{{item.price}}<span>起</span></p>
+              </swiper-slide>
+          </swiper>
+      </div>
+  </div>
 </template>
 
 <script>
 export default {
-    name: 'HomeHot',
-    data () {
-        return {
-            swiperOption :{
-                slidesPerView : 3.5
-            },
-            hotList:[{
-                id:'001',
-                imgUrl:'http://img1.qunarzz.com/sight/p0/201402/25/7c223b024b7ba7db02088e3f62c5e07c.jpg_250x250_3c9bc297.jpg',
-                desc:'崀山',
-                price:'￥68起'
-            },{
-                id:'002',
-                imgUrl:'http://img1.qunarzz.com/sight/p0/201402/25/7c223b024b7ba7db02088e3f62c5e07c.jpg_250x250_3c9bc297.jpg',
-                desc:'崀山',
-                price:'￥68起'
-            },{
-                id:'003',
-                imgUrl:'http://img1.qunarzz.com/sight/p0/201402/25/7c223b024b7ba7db02088e3f62c5e07c.jpg_250x250_3c9bc297.jpg',
-                desc:'崀山',
-                price:'￥68起'
-            },{
-                id:'004',
-                imgUrl:'http://img1.qunarzz.com/sight/p0/201402/25/7c223b024b7ba7db02088e3f62c5e07c.jpg_250x250_3c9bc297.jpg',
-                desc:'崀山',
-                price:'￥68起'
-            },{
-                id:'005',
-                imgUrl:'http://img1.qunarzz.com/sight/p0/201402/25/7c223b024b7ba7db02088e3f62c5e07c.jpg_250x250_3c9bc297.jpg',
-                desc:'崀山',
-                price:'￥68起'
-            }]
-        }
+  name:'HomeHot',
+  props: {
+    list: Array
+    // props接受list并指定类型为数组
+  },
+  data () {
+    return {
+      swiperOption: {
+        slidesPerView : 3.5,
+        centeredSlides : false
+      }
     }
-}
+    }
+  }
 </script>
 
 <style lang="stylus" scoped>
